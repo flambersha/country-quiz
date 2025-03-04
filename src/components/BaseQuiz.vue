@@ -100,28 +100,28 @@ onUnmounted(() => {
 <template>
   <div class="flex flex-col grow">
     <div class="flex flex-col items-center m-8 mb-0">
-        <h2 class="text-black text-4xl font-[Inter] font-semibold">Countries of <span class="capitalize">{{ props.continentName }}</span></h2>
-        <p class="mt-10 text-gray-600">1. Enter common country names and they will be automatically counted. <br>
+        <h2 class="text-(--main-text) text-4xl font-[Inter] font-semibold">Countries of <span class="capitalize">{{ props.continentName }}</span></h2>
+        <p class="mt-10 text-(--descr-text)">1. Enter common country names and they will be automatically counted. <br>
           2. Long country name? Initials don't count, just start typing the first 2 words
         </p>
         <!-- Result Message --> 
-    <p class="text-base transition-opacity duration-300 p-5 mt-2 border border-emerald-400 w-fit"
+    <p class="text-base text-(--main-text) transition-opacity duration-300 p-5 mt-2 border border-emerald-400 w-fit"
        :class="{ 'opacity-100 visible': !timerStore.inputEnabled && timerStore.timeTaken, 'opacity-0 hidden': !( !timerStore.inputEnabled && timerStore.timeTaken ) }">
         You guessed {{ store.countriesCounter }} out of {{ store.filteredCountries.length }} countries in {{ timerStore.formattedTimeTaken }}
     </p>
     </div>
-    <div class="sticky top-0 z-10 flex flex-row justify-center gap-5 items-center bg-white p-6 h-[90px]">
-      <div class="text-[20px] sm:text-4xl text-emerald-700 font-sans">
+    <div class="sticky top-0 z-10 flex flex-row justify-center gap-5 items-center bg-(--bg) p-6 h-[90px]">
+      <div class="text-[28px] sm:text-4xl text-(--timer) font-sans">
           {{ timerStore.formattedTime }}
         </div>
-        <div class="">
+        <div>
           <input
         v-model="timerStore.userInput"
         @input="checkCountryNames"
         type="text"
         placeholder="country name"
-        class="w-40 sm:w-64 border border-gray-300 rounded-md px-1 sm:px-4 py-2 shadow-sm focus:outline-none"
-         :class="{ 'bg-green-200 border-green-200': isCorrect }"
+        class="w-40 sm:w-64 border border-gray-300 text-(--main-text) rounded-md px-1 sm:px-4 py-2 shadow-sm focus:outline-none"
+         :class="{ 'bg-(--active-input) border-(--active-input)': isCorrect }"
         :disabled="!timerStore.inputEnabled"
     />
             <!-- guessed already message-->
@@ -131,11 +131,11 @@ onUnmounted(() => {
     </p>
         </div>
         <div>
-          <span v-if="timerStore.isRunning" class="text-[15px] text-center inline-block mb-2 md:mb-0 md:mr-5">{{ store.countriesCounter }} / {{ store.filteredCountries.length }}</span>
+          <span v-if="timerStore.isRunning" class="text-[15px] text-center text-(--main-text) inline-block mb-2 md:mb-0 mr-3 md:mr-5">{{ store.countriesCounter }} / {{ store.filteredCountries.length }}</span>
           <button
         v-if="!timerStore.isRunning"
         @click="timerStore.start"
-        class="px-4 py-2 bg-emerald-700 text-white rounded-md cursor-pointer">
+        class="px-4 py-2 bg-(--start) text-white rounded-md cursor-pointer">
         Start
       </button>
       <button

@@ -2,6 +2,33 @@
 
 @import "tailwindcss";
 
-/* @theme {
-    --font-display: "Oswald", "sans-serif"; 
-  } */
+.light{
+  --bg:white;
+  --nav-bg: #fef3c6;
+  --nav-hover:#34d399;
+  --nav-active:#10b981;
+  --drp-b:#b6b2ad;
+  --drp-hover:#dcfce7;
+  --main-text:black;
+  --descr-text:#4b5563;
+  --footer-bg:#3E363F;
+  --c-name:#047857;
+  --c-border:#e5e7eb;
+  --active-input:#b9f8cf;
+  --start:#047857;
+  --timer:#047857;
+}
+.dark{
+  --bg:#464541;
+  --nav-bg: black;
+  --nav-hover:#707573;
+  --nav-active:#6f6f6f;
+  --main-text:#c7c0c0;
+  --descr-text:#c7c0c0;
+  --footer-bg:black;
+  --c-name:#14cf9a;
+  --active-input:#6f917a;
+  --timer:#24d8a5;
+  --start:#2c7762;
+  --c-border:#78716c;
+}
