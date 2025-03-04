@@ -1,6 +1,6 @@
 #  🌿 My Vue + Tailwind CSS Country Quiz
 
-## Country flag quiz built with **Vue 3**, **Vite**, **Pinia** and **Tailwind CSS**. The project idea is inspired by [JetPunk](https://www.jetpunk.com/).     
+## Country flag quiz built with **Vue 3**, **Vite**, **Pinia** and **Tailwind CSS**. The project idea is inspired by [JetPunk](https://www.jetpunk.com/). Dark mode is available.     
 
 ![Project Screenshot](https://github.com/user-attachments/assets/601a537d-05fa-4d52-9814-094bee6b47ee)
 
