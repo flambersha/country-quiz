@@ -36,12 +36,12 @@ onMounted(()=>{
 <template>
     <header>
         <nav>
-            <div class="hidden md:flex justify-center items-center text-center bg-(--nav-bg) text-(--main-text) gap-3 lg:gap-10">
+            <div class="hidden md:flex justify-center bg-(--nav-bg) text-(--main-text) gap-3 md:gap-6 lg:gap-12 pr-2 pl-2">
                 <RouterLink v-for="route in navigation"
                 :key="route.name"
                 :to="route.href"
-                class="font-medium p-[10px] border-b-3 border-transparent hover:bg-(--nav-hover) capitalize"
-                activeClass="border-b-(--nav-active) transition duration-300 ease-in-out"
+                class="font-medium pt-[10px] pb-[10px] px-[2px] border-b-3 border-transparent hover:bg-(--nav-hover) text-center capitalize"
+                activeClass="border-b-emerald-500 transition duration-300 ease"
                 >{{ route.name }}</RouterLink>
                 <button @click="toggleTheme" class="cursor-pointer"><i class="fa fa-sun-o"></i></button>
             </div>

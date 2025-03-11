@@ -149,7 +149,7 @@ onUnmounted(() => {
     </div>
     <div class="p-4 flex justify-center">
             <p v-if="!store.filteredCountries.length">No countries found for this continent.</p>
-             <div class="grid justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
+             <div class="grid justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 <Country
                     v-for="(country, index) in store.filteredCountries"
                     :key="index"
