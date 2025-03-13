@@ -10,6 +10,7 @@
   --drp-b:#b6b2ad;
   --drp-hover:#dcfce7;
   --main-text:black;
+  --input-text:black;
   --descr-text:#4b5563;
   --footer-bg:#3E363F;
   --c-name:#047857;
@@ -24,6 +25,7 @@
   --nav-hover:#707573;
   --nav-active:#6f6f6f;
   --main-text:#c7c0c0;
+  --input-text:white;
   --descr-text:#c7c0c0;
   --footer-bg:black;
   --c-name:#14cf9a;

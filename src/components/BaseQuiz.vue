@@ -172,7 +172,7 @@ onUnmounted(() => {
           @input="checkCountryNames"
           type="text"
           placeholder="country name"
-          class="w-40 sm:w-64 border border-gray-300 text-(--main-text) rounded-md px-1 sm:px-4 py-2 shadow-sm focus:outline-none"
+          class="w-40 sm:w-64 border border-gray-300 text-(--input-text) rounded-md px-1 sm:px-4 py-2 shadow-sm focus:outline-none"
           :class="{ 'bg-(--active-input) border-(--active-input)': isCorrect }"
           :disabled="!timerStore.inputEnabled"
         />
