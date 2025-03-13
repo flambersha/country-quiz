@@ -79,7 +79,7 @@ export const useTimerStore = defineStore('timer', () => {
     }
     function initialCounters(){
         countryStore.countriesCounter = 0;
-        timeTaken.value = null
+        timeTaken.value = null;
     }
 
     return { originalTime, timeLeft, formatTime, formattedTime, timeTaken, formattedTimeTaken, isRunning, setTime, start, stop, initialCounters, userInput, inputEnabled };

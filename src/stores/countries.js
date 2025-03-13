@@ -50,7 +50,6 @@ export const useCountryStore = defineStore('country', () => {
         continent: e.continents.map(continent => continent.toLowerCase()),
         isRevealed: false
       }))
-      countries.value.sort(() => Math.random() - 0.5);
     } catch (error) {
       throw new Error("Could not retrieve countries data from REST API: ", error);
     }
