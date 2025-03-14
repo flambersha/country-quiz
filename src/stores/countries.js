@@ -7,6 +7,7 @@ export const useCountryStore = defineStore('country', () => {
     const route = useRoute()
     const countries = ref([]);
     const countriesCounter = ref(0);
+    const isLoading = ref(false);
 
     //computed property for filtering the countries
     const filteredCountries = computed(() => {
@@ -20,6 +21,7 @@ export const useCountryStore = defineStore('country', () => {
     // retrieving countries from .json file or REST API, default is .json file
     async function fetchCountries(isApi = false) {
       try {
+        isLoading.value = true;
         if (isApi) {
           await getRestCountries();
           console.log('api')
@@ -36,6 +38,7 @@ export const useCountryStore = defineStore('country', () => {
           );
         }
         countries.value.sort(() => Math.random() - 0.5);
+        isLoading.value=false;
       } catch (error) {
         alert("Failed to fetch countries:", error)
       }
@@ -54,5 +57,5 @@ export const useCountryStore = defineStore('country', () => {
       throw new Error("Could not retrieve countries data from REST API: ", error);
     }
 }
-  return { countries, countriesCounter, filteredCountries, isWorldQuiz, fetchCountries}
+  return { countries, countriesCounter, filteredCountries, isWorldQuiz, fetchCountries, isLoading}
 })

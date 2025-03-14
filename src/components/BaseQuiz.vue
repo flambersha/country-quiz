@@ -4,6 +4,7 @@ import { useCountryStore } from "@/stores/countries";
 import { useTimerStore } from "@/stores/timer";
 import { ref, onMounted, onUnmounted } from "vue";
 import confetti from "canvas-confetti";
+import Loading from "./Loading.vue";
 
 const props = defineProps({
   continentName: String,
@@ -211,14 +212,8 @@ onUnmounted(() => {
       </div>
     </div>
     <div class="p-4 flex justify-center">
-      <p
-        class="text-(--c-name) text-center"
-        v-if="!store.filteredCountries.length"
-      >
-        No countries found for this continent
-      </p>
-      <div
-        class="grid justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+      <Loading v-if="store.isLoading"></Loading>
+      <div v-if="!store.isLoading" class="grid justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
       >
         <Country
           v-for="(country, index) in store.filteredCountries"
