@@ -37,7 +37,7 @@ export const useTimerStore = defineStore('timer', () => {
     function start(){
         if(!isRunning.value){
         initialCounters();
-
+        countryStore.sortCountries();
         inputEnabled.value = true;
         startTime.value = Date.now();
         originalTime.value = timeLeft.value;

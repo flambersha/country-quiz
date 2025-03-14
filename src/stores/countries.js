@@ -13,10 +13,13 @@ export const useCountryStore = defineStore('country', () => {
     const filteredCountries = computed(() => {
       return isWorldQuiz() ? countries.value : countries.value.filter(country => country.continent.includes(route.name));
     });
-
-      function isWorldQuiz() {
-        return route.name === 'world'
-      }
+   
+    function isWorldQuiz() {
+      return route.name === 'world';
+    }
+    function sortCountries(){
+      countries.value = [...countries.value].sort(() => Math.random() - 0.5);
+    }
 
     // retrieving countries from .json file or REST API, default is .json file
     async function fetchCountries(isApi = false) {
@@ -37,7 +40,6 @@ export const useCountryStore = defineStore('country', () => {
             }))
           );
         }
-        countries.value.sort(() => Math.random() - 0.5);
         isLoading.value=false;
       } catch (error) {
         alert("Failed to fetch countries:", error)
@@ -57,5 +59,5 @@ export const useCountryStore = defineStore('country', () => {
       throw new Error("Could not retrieve countries data from REST API: ", error);
     }
 }
-  return { countries, countriesCounter, filteredCountries, isWorldQuiz, fetchCountries, isLoading}
+  return { countries, countriesCounter, filteredCountries, isWorldQuiz, fetchCountries, isLoading,sortCountries}
 })

@@ -178,13 +178,8 @@ onUnmounted(() => {
           :disabled="!timerStore.inputEnabled"
         />
         <!-- guessed already message-->
-        <p
-          class="absolute top-17 text-sm font-normal text-red-500 transition-opacity duration-300"
-          :class="{
-            'opacity-100 visible': message,
-            'opacity-0 invisible': !message,
-          }"
-        >
+        <p v-show="message"
+          class="absolute top-17 text-sm font-normal text-red-500">
           {{ message }}
         </p>
       </div>
